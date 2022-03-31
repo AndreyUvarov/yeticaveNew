@@ -1,41 +1,5 @@
 <?php
-$lot_1 = [
-'name' => '2014 Rossignol District Snowboard',
-'categories' => 'Доски и лыжи',
-'price' => 10999,
-'url' => 'img/lot-1.jpg'
-];
-$lot_2 = [
-'name' => 'DC Ply Mens 2016/2017 Snowboard',
-'categories' => 'Доски и лыжи',
-'price' => 159999,
-'url' => 'img/lot-2.jpg'
-];
-$lot_3 = [
-'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-'categories' => 'Крепления',
-'price' => 8000,
-'url' => 'img/lot-3.jpg'
-];
-$lot_4 = [
-'name' => 'Ботинки для сноуборда DC Mutiny Charocal',
-'categories' => 'Ботинки',
-'price' => 10999,
-'url' => 'img/lot-4.jpg'
-];
-$lot_5 = [
-'name' => 'Куртка для сноуборда DC Mutiny Charocal',
-'categories' => 'Одежда',
-'price' => 7500,
-'url' => 'img/lot-5.jpg'
-];
-$lot_6 = [
-'name' => 'Маска Oakley Canopy',
-'categories' => 'Разное',
-'price' => 5400,
-'url' => 'img/lot-6.jpg'
-];
-$lot_list = [$lot_1, $lot_2, $lot_3, $lot_4, $lot_5, $lot_6];
+require 'lotsData.php';
 function format_price($price):string{
 $price =   ceil($price);
 $price =   number_format($price,'0', ' ', ' ');
@@ -84,7 +48,7 @@ return $price;
                     </div>
                     <div class="lot__info">
                         <span class="lot__category"><?=$lot_list[$lots_count]['categories'];?></span>
-                        <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$lot_list[$lots_count]['name'];?></a></h3>
+                        <h3 class="lot__title"><a class="text-link" href="lot.php?lot=<?=$lots_count?>"><?=$lot_list[$lots_count]['name'];?></a></h3>
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
